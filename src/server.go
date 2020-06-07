@@ -12,7 +12,8 @@ import (
 
 func handleConnection(conn net.Conn, onlineClientsChan chan common.TCPClient, offlineClientsChan chan common.Payload) {
 
-	buf := make([]byte, 1024)
+	// change size per need
+	buf := make([]byte, 4096)
 	var payload common.Payload
 
 	for {
